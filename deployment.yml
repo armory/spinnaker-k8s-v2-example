@@ -17,6 +17,10 @@ spec:
           requests:
             memory: "128M"
             cpu: "1000m"
+        volumes:
+        - name: k8-config
+          configMap:
+            name: k8-v2-config-map
         ports:
         - containerPort: 80
         livenessProbe:
