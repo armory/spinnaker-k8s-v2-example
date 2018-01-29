@@ -12,7 +12,7 @@ data:
     enemies=aliensss
     lives=19
     enemies.cheat=true
-    enemies.cheat.level=14
+    enemies.cheat.level=15
     secret.code.passphrase=UUDDLRLRBABAS
     secret.code.allowed=true
     secret.code.lives=34
