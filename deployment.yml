@@ -10,6 +10,10 @@ spec:
       labels:
         app: k8s-v2-example
     spec:
+      volumes:
+      - name: k8-config-v5
+        configMap:
+           name: k8-v2-config-map
       containers:
       - name: k8s-v2-example
         image: nginx
@@ -17,10 +21,7 @@ spec:
           requests:
             memory: "128M"
             cpu: "1000m"
-        volumes:
-        - name: k8-config-v5
-          configMap:
-            name: k8-v2-config-map
+
         ports:
         - containerPort: 80
         livenessProbe:
