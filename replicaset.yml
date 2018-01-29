@@ -1,10 +1,13 @@
 apiVersion: extensions/v1beta1
-kind: Deployment
+kind: ReplicaSet
 metadata:
   name: k8s-v2-example
   namespace: staging
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-v2-example
   template:
     metadata:
       labels:
@@ -13,13 +16,9 @@ spec:
       containers:
       - name: k8s-v2-example
         image: nginx
-        resources:
-          requests:
-            memory: "128M"
-            cpu: "1000m"
-        volumes:
-        - name: k8-config-v5
-          configMap:
-            name: k8-v2-config-map
         ports:
         - containerPort: 80
+      volumes:
+        - name: k8-v2-config
+          configMap:
+            name: k8-v2-config-map
