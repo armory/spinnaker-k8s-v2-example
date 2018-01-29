@@ -11,9 +11,9 @@ spec:
         app: k8s-v2-example
     spec:
       volumes:
-      - name: k8-config-v5
+      - name: k8-v2-config-map
         configMap:
-           name: k8-v2-config-map
+          name: k8-v2-config-map
       containers:
       - name: k8s-v2-example
         image: nginx
