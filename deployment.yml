@@ -18,7 +18,7 @@ spec:
             memory: "128M"
             cpu: "1000m"
         volumes:
-        - name: k8-config
+        - name: k8-config-v1
           configMap:
             name: k8-v2-config-map
         ports:
